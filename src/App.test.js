@@ -1,61 +1,54 @@
 /** @jest-environment jsdom */
 import React from 'react';
 import '@testing-library/jest-dom';
-import { render, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { App } from './App';
-import { Button } from './components/Button';
 
 /**
  * Verify something should render
  */
-it('should render', () => {
-  const { baseElement } = render(<App />);
+test('App should render', () => {
+  render(<App />);
 
-  expect(baseElement).toBeInTheDocument();
+  expect(screen.getByText('Welcome, party people!')).toBeInTheDocument();
 });
 
-it('Button should render', () => {
-  render(<Button />);
-});
-
-it('Button should render text', () => {
-  const { getByText } = render(<Button label='click me' />);
-
-  expect(getByText('click me')).toBeInTheDocument();
+test('Button should render', () => {
+  // TODO: fill me in!
 });
 
 /**
- * Verify a callback is called
+ * Verify clicking button should change theme
+ * hint: use fireEvent.click(element) to trigger a click event on an element
  */
-it('Button should call callback', () => {
-  const callback = jest.fn();
-  const { getByText } = render(<Button label='click me' onClick={callback} />);
+test('theme button should update button text', () => {
+  // TODO: fill me in!
+});
 
-  const button = getByText('click me');
-  fireEvent.click(button);
-
-  expect(callback).toHaveBeenCalled();
+// BONUS
+// hint: there is a `.toHaveStyle` method.
+// e.g.: expect(element).toHaveStyle('color: #FFF');
+test('theme button should toggle styles', () => {
+  // TODO: fill me in!
 });
 
 /**
- * verify page is updated when button is clicked
+ * Verify clicking button should toggle hidden content
+ *
+ * hint: you can check if something does not exist by using .not
+ * e.g. expect(element).not.toBeInTheDocument()
+ *
+ * hint: use `queryByText` instead of `getByText` to check if something is _not_ rendered
+ * (getByText will throw an error if it is not rendered)
  */
-function RenderButton() {
-  const [count, setCount] = React.useState(0);
-
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <Button label='Click me' onClick={() => setCount(count + 1)} />
-    </div>
-  );
-}
-
-it('Button should update page', () => {
-  const { getByText } = render(<RenderButton />);
-
-  const button = getByText('Click me');
-  fireEvent.click(button);
-
-  expect(getByText('You clicked 1 times')).toBeInTheDocument();
+test('hidden button should toggle hidden content', () => {
+  // TODO: fill me in!
 });
+
+
+/**
+ * Want more? Try these:
+ *   - check for the presence of a specific element, like the paragraph containing the text "Click the button to toggle the theme"
+ *   - check the for the class name .container on the surrounding div
+ *   - after clicking the toggle hidden content button, check for the button text to update to "hide" instead of "show"
+ */
