@@ -14,7 +14,8 @@ test('App should render', () => {
 });
 
 test('Button should render', () => {
-  // TODO: fill me in!
+  // TODO: change the expect to actually test something 😉
+  expect('no test written').toBe('tested');
 });
 
 /**
@@ -22,14 +23,16 @@ test('Button should render', () => {
  * hint: use fireEvent.click(element) to trigger a click event on an element
  */
 test('theme button should update button text', () => {
-  // TODO: fill me in!
+  // TODO: change the expect to actually test something 😉
+  expect('no test written').toBe('tested');
 });
 
 // BONUS
 // hint: there is a `.toHaveStyle` method.
 // e.g.: expect(element).toHaveStyle('color: #FFF');
 test('theme button should toggle styles', () => {
-  // TODO: fill me in!
+  // TODO: change the expect to actually test something 😉
+  expect('no test written').toBe('tested');
 });
 
 /**
@@ -42,7 +45,8 @@ test('theme button should toggle styles', () => {
  * (getByText will throw an error if it is not rendered)
  */
 test('hidden button should toggle hidden content', () => {
-  // TODO: fill me in!
+  // TODO: change the expect to actually test something 😉
+  expect('no test written').toBe('tested');
 });
 
 
